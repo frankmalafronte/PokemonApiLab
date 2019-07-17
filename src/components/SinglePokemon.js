@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import {Link} from 'react-router-dom'
 class SinglePokemon extends Component {
   constructor(){
     super()
@@ -24,7 +24,7 @@ class SinglePokemon extends Component {
     console.log(this.state)
     let imageURL = "no image"
     if(this.state.pokemon.name){
-       imageURL = this.state.pokemon.sprites.front_shiny
+       imageURL = this.state.pokemon.sprites.front_default
     }
     return(
       <div>
@@ -32,6 +32,9 @@ class SinglePokemon extends Component {
     {this.state.pokemon.name}
     <img alt ="" src = {imageURL}/>
     </div>
+    <button>
+      <Link to = '/home' style={{textDecoration:'none', color:'black'}}> back </Link>
+    </button>
     </div>)
   }
 }

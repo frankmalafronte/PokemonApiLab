@@ -11,7 +11,6 @@ constructor(){
 
 
 render(){
-  let name = 'charizard'
   return (
     <Switch>
       {/* These are our routes */}
@@ -21,7 +20,7 @@ render(){
 
       {/* <Route path = "/pokemon/:name" component ={SinglePokemon}/> */}
 
-       <Route path = "/pokemon/:name" render = {(props) => <SinglePokemon name = {name}/>}/>
+       <Route path = "/pokemon/:name" component ={SinglePokemon}/>
 
 
       {/* If we can't find a path, we can have a default to a component maybe a 404?*/}

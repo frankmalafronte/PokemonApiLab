@@ -9,7 +9,6 @@ class SinglePokemon extends Component {
  
 
   async componentDidMount(){
-    console.log(this.props)
 
     let id = this.props.match.params.name
     

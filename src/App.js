@@ -1,12 +1,29 @@
-import React from 'react';
-import Routes from './Routes'
+import React, { Component } from 'react';
+import './App.css';
 
-const App = (props) => {
-return (
-  // always on components such as headers
-  // and footers go here
-  <Routes/>
-)
+class App extends Component {
+  constructor(){
+    super()
+    this.state= {pokemon:{}}
+  }
+
+ 
+
+  async componentDidMount(){
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/1`)
+    const json = await response.json()
+    console.log(json.name)
+    this.setState({pokemon:json})
+  }
+
+
+  
+  render(){
+    console.log(this.state)
+    return(<div>
+        {this.state.pokemon.name}
+    </div>)
+  }
 }
 
-export default App
+export default App;

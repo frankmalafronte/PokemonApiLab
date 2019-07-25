@@ -7,14 +7,11 @@ class Pokemon extends Component {
     this.state= {pokemon:{}}
   }
 
- 
 
   async componentDidMount(){
-    console.log(this.props.match)
-    console.log(window.location.href)
+   console.log(process.env.REACT_APP_API_KEY)
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=150`)
     const json = await response.json()
-    console.log(json)
     this.setState({pokemon:json})
   }
 
@@ -29,7 +26,6 @@ class Pokemon extends Component {
 
   
   render(){
-    console.log(this.state)
     let arrayToMap = []
     if(this.state.pokemon.results){
       //  imageURL = this.state.pokemon.sprites.front_shiny
@@ -51,7 +47,8 @@ class Pokemon extends Component {
     
     </div>)
     // <div> hello </div>)
-  }
+  
+}
 }
 
 export default Pokemon;

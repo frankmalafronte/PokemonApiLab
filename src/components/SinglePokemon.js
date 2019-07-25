@@ -9,10 +9,9 @@ class SinglePokemon extends Component {
  
 
   async componentDidMount(){
-
-    let id = this.props.match.params.name
+    let name = this.props.match.params.name
     
-    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`)
     const json = await response.json()
     console.log(json)
     this.setState({pokemon:json})
@@ -21,6 +20,7 @@ class SinglePokemon extends Component {
 
   
   render(){
+  
     console.log(this.state)
     let imageURL = "no image"
     if(this.state.pokemon.name){

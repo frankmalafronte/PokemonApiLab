@@ -18,12 +18,11 @@ render(){
       <Route path="/welcome" component={Welcome} />
       <Route path="/home" component={Pokemon} />
 
-      {/* <Route path = "/pokemon/:name" component ={SinglePokemon}/> */}
-
+      {/* our variable route, which will catch a request for each pokemon */}
        <Route path = "/pokemon/:name" component ={SinglePokemon}/>
 
 
-      {/* If we can't find a path, we can have a default to a component maybe a 404?*/}
+      {/* If we can't find a path, we can have a default to a component, maybe a 404?*/}
       <Route component = {Pokemon} />
     </Switch>
     )
